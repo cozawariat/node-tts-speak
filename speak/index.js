@@ -4,8 +4,8 @@ var _ = require('lodash'),
     Logger = require('g33k-logger'),
     fs = require('fs-extra'),
     lame = require('lame'),
-    Speaker = require('speaker'),
-    mpg123Util = require('node-mpg123-util');
+    Speaker = require('speaker');//,
+    //mpg123Util = require('node-mpg123-util');
 
 // Create a logger
 var log = null;
@@ -61,7 +61,7 @@ speak.prototype.exec = function(file, next) {
 
     // Intercept decode stream and apply volume changes
     decoder.on('format', function() {
-        mpg123Util.setVolume(decoder.mh, volume);
+        //mpg123Util.setVolume(decoder.mh, volume);
     });
 
     // Stream the PCM audio to speaker
